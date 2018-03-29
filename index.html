@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Client</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<h1>{{h1}}</h1>
+	</div>
+	<script>
+    	const LOCALHOST = "localhost";
+		const PORT = 8088;
+		const socket = new WebSocket(`ws://${LOCALHOST}:${PORT}`);
+		 
+		const app = new Vue({
+			el: "#app",
+			data () {
+				return {
+					h1: "Hello World"
+				}
+			},
+			methods: {}
+		});
+
+		socket.onopen = server => {};
+
+		socket.onmessage = server => {};
+
+	</script>
+</body>
+</html>
