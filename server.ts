@@ -8,7 +8,7 @@ const server = WebSocket.Server({
 });
 
 app.get("/", (req, res) => {
-	res.send("hello world");
+	res.sendFile(__dirname + "/index.html);
 });
 
 server.on("connection", (client) => {
